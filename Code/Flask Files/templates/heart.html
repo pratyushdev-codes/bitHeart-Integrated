@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter the Values from CTG report for Fetal Health Analysis</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "General Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      margin: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: black;
+      background-image: url('bg3.jpeg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .number-selector {
+  display: inline-block;
+  margin-right: 20px;
+  border-radius: 20px;
+  width: 350px;
+  height: 150px;
+  border: 2px solid black;
+  padding: 8px;
+  margin-bottom: 20px; /* Add margin-bottom for spacing */
+}
+
+
+    .input-field {
+      border: 1px solid;
+      border-radius: 20px;
+      height: 40px;
+      background-color: #343A3F;
+      border-color: transparent;
+      color: #ffffff;
+    }
+
+    .number-selector:last-child {
+      margin-right: 0;
+    }
+
+    .entry {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      margin: 0 10px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <h2 class="header">Heart Analysis</h2>
+    <br />
+    <br />
+    <form method="POST" action="{{ url_for('predict') }}">
+      <div class="row">
+
+        <!-- Number Selector 1 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Age</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='baseline_value' placeholder=" Enter your value" class="input-field" value="">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 2 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Sex</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='accelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 3 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Chest Pressure</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='fetal_movement' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 4 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Blood Pressure</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='uterine_contractions' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 5 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Cholestrol</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='light_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 6 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Fasting Blood Sugar
+            </h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='severe_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 7 -->
+        <div class="col-md-4">
+          <div class="number-selector">
+            <h4>Rest ECG</h4>
+            <div class="entry">
+              <button type="button" class="btn btn-secondary minus">-</button>
+              <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+              <button type="button" class="btn btn-secondary plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number Selector 8 -->
+
+        <div class="col-md-4">
+            <div class="number-selector">
+              <h4>Old Peak</h4>
+              <div class="entry">
+                <button type="button" class="btn btn-secondary minus">-</button>
+                <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+                <button type="button" class="btn btn-secondary plus">+</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <div class="number-selector">
+              <h4>Exercise</h4>
+              <div class="entry">
+                <button type="button" class="btn btn-secondary minus">-</button>
+                <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+                <button type="button" class="btn btn-secondary plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="number-selector">
+              <h4>Slow Peak</h4>
+              <div class="entry">
+                <button type="button" class="btn btn-secondary minus">-</button>
+                <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+                <button type="button" class="btn btn-secondary plus">+</button>
+              </div>
+            </div>
+          </div>
+       
+
+
+          <div class="col-md-4">
+            <div class="number-selector">
+              <h4>Number of measure Vessels</h4>
+              <div class="entry">
+                <button type="button" class="btn btn-secondary minus">-</button>
+                <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+                <button type="button" class="btn btn-secondary plus">+</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <div class="number-selector">
+              <h4>Thal</h4>
+              <div class="entry">
+                <button type="button" class="btn btn-secondary minus">-</button>
+                <input type="text" name='prolongued_decelerations' placeholder=" Enter your value" class="input-field" value="10.00">
+                <button type="button" class="btn btn-secondary plus">+</button>
+              </div>
+            </div>
+
+          </div>
+    </form>
+  </div>
+<button> Predict </button>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // JavaScript to handle +/- buttons
+    $(document).ready(function() {
+      $(".plus").click(function() {
+        var numberElement = $(this).siblings(".input-field");
+        var currentNumber = parseFloat(numberElement.val());
+        numberElement.val((currentNumber + 1).toFixed(2));
+      });
+
+      $(".minus").click(function() {
+        var numberElement = $(this).siblings(".input-field");
+        var currentNumber = parseFloat(numberElement.val());
+        if (currentNumber > 0) {
+          numberElement.val((currentNumber - 1).toFixed(2));
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
