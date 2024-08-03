@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 from model import scaler
 
-
+steps_count = 0
 app = Flask(__name__)
 model = pickle.load(open('gbmodel.pkl', 'rb'))
 
@@ -69,6 +69,19 @@ def predict_api():
         output = "Active"
         
     return jsonify(output)
+
+
+@app.route('/getStep', methods=['GET'])
+def get_step():
+    global steps_count
+    print(steps_count)
+    return jsonify({"steps": steps_count})
+
+@app.route('/sendStep', methods=['POST'])
+def send_step():
+    global steps_count
+    steps_count = request.form.get("steps")
+    return 200
 
 if __name__ == "__main__":
     app.run(debug=True)

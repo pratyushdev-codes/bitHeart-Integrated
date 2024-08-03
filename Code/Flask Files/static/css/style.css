@@ -3,6 +3,7 @@ body {
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 14px;
+  background-color: #000;
 }
 
 
@@ -85,12 +86,12 @@ h2 {
 }
 .signup__form {
   padding: 2.5rem;
-  background: #fafafa;
+  background: #000;
 }
 label {
   font-size: .85rem;
   text-transform: uppercase;
-  color: #ccc;
+  color: rgb(231 218 218);
 }
 .form-control {
   background-color: transparent;
@@ -139,7 +140,7 @@ label {
 
 .label {
   font-size: 16px;
-  color: rgb(0, 0, 0);
+  color: rgb(231 218 218);
   text-transform: capitalize;
   display: block;
   margin-bottom: 5px;

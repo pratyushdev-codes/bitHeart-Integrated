@@ -222,7 +222,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
+  <!-- <script>
     // JavaScript to handle +/- buttons
     $(document).ready(function() {
       $(".plus").click(function() {
@@ -237,6 +237,21 @@
         if (currentNumber > 0) {
           numberElement.val((currentNumber - 1).toFixed(2));
         }
+      });
+    });
+  </script> -->
+  <script>
+    $(document).ready(function() {
+      // Fetch step count from the Flask endpoint and set the input field value
+      fetch("http://127.0.0.1:5000/getStep")
+      .then(response => response.json())
+      .then(data => {
+        $('#steps').val(data.steps);
+      })
+      .catch(error => console.error('Error fetching step count:', error));
+
+      $('.btnform').click(function() {
+        window.location.href = "heart.html";
       });
     });
   </script>
